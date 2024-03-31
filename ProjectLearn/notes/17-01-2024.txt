@@ -1,0 +1,5 @@
+hooks:
+
+before hooks, class & function components were not interchangble
+
+    state variables

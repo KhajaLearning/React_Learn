@@ -1,0 +1,161 @@
+install react, reactdom npm
+
+npm i react react-dom -save
+
+get relative url path of react, react-dom
+
+        node_modules\react\umd\react.development.js
+        node_modules\react-dom\umd\react-dom.development.js
+
+add that path in script tag of html file
+        <script src="/node_modules/react/umd/react.development.js"></script>
+        <script src="/node_modules/react-dom/umd/react-dom.development.js"></script>
+
+create new html element using react
+
+simple div element creation using react
+
+const element = React.createElement(
+  "div",    //Element type
+  {
+    className: "container", //Element property
+  },
+  "Hello world using react" //Element value or create child element
+);
+
+create root element for virtual DOM
+
+const root = ReactDOM.createRoot(rootElement);
+
+append child into virtual DOM
+
+root.render(element);
+
+based on CSS , property name of className will be -> class
+but we need to give *className* for class property of the HTML element. when the browser converts automatically className into class
+
+here we can add children into the property section
+
+const element = React.createElement(
+  "div", //Element type
+  {
+    className: "container", //Element property
+    children: "Hello world using react from property object",
+  }
+);
+
+here we can add multiple value into the property of array type
+
+const element = React.createElement(
+  "div", //Element type
+  {
+    className: "container", //Element property
+    children: ["Hello world using react from property object", "welcome"],
+  }
+);
+
+
+if we try to give p element in children property value
+
+const element = React.createElement(
+  "div", //Element type
+  {
+    className: "container", //Element property
+    children: [
+      "<p>Hello world using react from property object</p>",
+      "welcome",
+    ],
+  }
+);
+
+in this type browser unable to identify the tag. it consider like normal string
+
+when we write these, it cause error
+
+children: [
+      <p>"Hello world using react from property object"</p>,
+      "welcome",
+    ],
+
+ when we write html element inside the JS file, browser unable to understand html content iside the js file.
+
+ these kind of problem overcome by using BABEL compiler which is responsible to transcompile JSX (html +js) code into normal JS code.
+
+ React -> imperative (step by step instruction follows) & declarative 
+
+ using JSX code --> can write html content into JS file
+
+ //using JSX 
+const element = <div className="container">Hello world using react JSX format</div>
+
+
+BABEL npm install
+
+npm i --save -dev @babel/standalone
+
+need to add babel.min.js inside script tag of html file
+
+    node_modules\@babel\standalone\babel.min.js
+
+need to change <script> type from "text/javascript" to "text/babel"
+
+    <script type="text/babel" src="/main1.js"></script>
+
+ add an new element h1 inside <div>
+
+ const element = (
+  <div className="container">
+    <p>Hello world using react JSX format with BABEL compiler</p>
+  </div>
+);
+
+can not use CSS property like style inside of HTML when we are using JSX code
+
+Babel online compiler -> creates JSX code from HTML element.
+
+can use expression also with the help of {variable_name}
+
+const fname = "Harry";
+const element = (
+  <div className="container">
+    <p>Hello world using react JSX format with BABEL compiler inside of paragraph element</p>
+    <h1>Hi {fname}!!!</h1>
+  </div>
+);
+
+can we use object also using {object.keyname}
+
+{/*........*/} --> Comment line for JSX
+
+JSX expression must have 1 parent element
+
+unable to use multiple elements outside of the <div> element here
+
+these problem resolved by using fragments -> react.fragments
+
+<React.Fragment>..</React.Fragment> or <> ..</>
+
+react JSX function
+
+const rootElement = document.getElementById("root");
+const root = ReactDOM.createRoot(rootElement);
+
+function renderElement() {
+  const element = (
+    <div className="post">
+      <h1>Our first blog post</h1>
+      <div>Author: Naveen & Nirmal</div>
+      <div>Published: {new Date().toLocaleTimeString()}</div>
+      <p>
+        I am new to blogging and this is our first post. you should expect a lot
+        of great things from us.
+      </p>
+    </div>
+  );
+  root.render(element);
+}
+
+setInterval(renderElement, 1000);
+
+
+ 

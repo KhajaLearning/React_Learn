@@ -1,0 +1,82 @@
+create new html file with name of index.html
+write basic html code with shortcut of like this -> html:5 using snippets
+create div element by writing -> div#root using snippets
+create new file -> main.js
+
+create a new element and that element append to root element using normal JS like code has given below 
+
+const rootElement = document.getElementById('root');
+const element = document.createElement('div');
+element.textContent = "Hello World";
+element.className = 'container';
+rootElement.appendChild(element);
+
+link main.js file into the index.html file using script tag
+
+<script type="text/javascript" src="/main.js"></script>
+
+Need to configure for running the project in server side -> package.json
+
+to initialize the project
+
+Manual configuration:
+
+npm init
+
+package name: (demolearn)
+version: (1.0.0)
+description: demo folder
+entry point: (main.js)
+test command:
+git repository:
+keywords:
+author: harry
+license: (ISC)
+About to write to E:\React_Learn\DemoLearn\package.json:
+
+{
+  "name": "demolearn",
+  "version": "1.0.0",
+  "description": "demo folder",
+  "main": "main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "harry",
+  "license": "ISC"
+}
+
+Default configuration instead of Manual
+
+npm init -y
+
+{
+  "name": "demolearn",
+  "version": "1.0.0",
+  "description": "",
+  "main": "main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}
+
+need to install server
+
+npm i serve
+
+Need to modify the package.json file. to add the script to run a file
+
+"start": "serve -s -p 5000"
+
+to run the project command -> npm start
+
+Create new element h1 tag element and then append to previous one element
+
+const headElement = document.createElement("h1");
+headElement.textContent = "head h1 element";
+element.appendChild(headElement);
+
+

@@ -1,0 +1,20 @@
+Componenents:
+
+UI --> split into independent, reusable places
+
+two types of components
+    function
+    class
+
+for better performance need to avoid class components above version 16 in react
+
+create a new file like main3.js. then paste these lines into the main3.js
+
+function helloWorld() {
+    return <div className='container'>Hello from function component</div>;
+}
+
+const root = ReactDOM.createRoot(document.getElementById('root'))
+root.render(<helloWorld/>)
+
+When we create a function component, the component name will be pascal case format which is first and consecutive letter of the word will be capital

@@ -1,0 +1,10 @@
+HTTP
+The ability to make HTTP calls is not built-in to React.
+React applications use one of the following to make HTTP calls:
+•	Axios library
+•	fetch API (built-in to modern browsers)
+
+Axios
+1.	Install the axios library.
+npm install axios
+Axios is a Promise based HTTP client for the browser and node.js.
